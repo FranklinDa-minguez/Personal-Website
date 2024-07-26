@@ -10,14 +10,51 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
+      content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css" />
-	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+	  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+	  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <style>
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body class="is-preload">
     <!-- Wrapper -->
@@ -51,9 +88,6 @@
                 I am a rising sophomore at CCNY. I am still exploring the different fields within CS to get a feel for what i want to do long term. I've dove into web dev for quite a bit and dabbled in andriod dev. I am intrested in ios dev, machine learning, and data science. We'll see where my jouney takes me.
               </p>
               <br/>
-              <ul class="actions">
-                <li><a href="more.html" class="button">Learn More</a></li>
-              </ul>
             </div>
             <span class="image"><img src="/assets/css/images/IMG_7019.png" alt="Franklin Dominguez" /></span>
           </div>
@@ -67,13 +101,46 @@
           <ul class="items-center features">
             <li>
               <div class="portfolio-item cursor-pointer relative block max-w-6xl rounded-[5px] overflow-hidden transform transition-transform duration-200 ease-in-out hover:scale-90">
-                <img src="assets/css/images/Spring2024BYTE.jpg" class="w-full hover:w-9/12 transition-all duration-300 m-auto">
+                <img src="assets/css/images/Spring2024BYTE.jpg" class="w-full hover:w-9/12 transition-all duration-300 m-auto" id="myImg">
                 <h1>Spring 2024 BYTE cohort</h1>
               </div>
             </li>
           </ul>
         </section>
         
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Spring 2024 BYTE Cohort</h2>
+            <p>This is my team for the BYTE cohort for Spring 2024 as well as our 2 mentors. It consists of a diverse group of students who are dedicated to learning and growing in the field of technology. I teamed up with 2 other novice developer's to create a project with an unfamiliar tech stack. Using Kotlin, Jetpack compose, and Json Object, we managed to make the alarm app called Dont Be Alarmed.</p>
+            <br><br/>
+            <img class=" m-auto" src="assets\css\images\Spring2024BYTE_Team1.jpg" alt="Spring2024BYTE_Team1">
+            <h1 class=" text-center text">BYTE 2024 Spring Team 1</h1>
+          </div>
+        </div>
+
+        <script>
+          // Get the modal
+          var modal = document.getElementById("myModal");
+
+          // Get the image and insert it inside the modal - use its "alt" text as a caption
+          var img = document.getElementById("myImg");
+          var modalImg = document.getElementById("img01");
+          var captionText = document.getElementById("caption");
+          img.onclick = function(){
+            modal.style.display = "block";
+          }
+
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() { 
+            modal.style.display = "none";
+          }
+        </script>
+
         <!-- Second Section -->
         <section id="first" class="main special">
           <header class="major">
@@ -81,12 +148,13 @@
           </header>
           <ul class="items-center features">
             <li>
-              <img class="portfolio-item cursor-pointer relative block max-w-6xl rounded-[5px] overflow-hidden transform transition-transform duration-200 ease-in-out hover:scale-90 m-auto" src="assets\css\images\DontBeAlarmed.gif" class="m-auto"></img>
-              <h3>Dont Be Alarmed</h3>
-              <p>
-                An andriod alarm app that has a multitude of activities to play after the alarm goes off, ensuring you stay awake.
-              </p>
-              <a href="more.html" class="button">Learn More</a>
+              <div class="portfolio-item cursor-pointer relative block max-w-6xl rounded-[5px] overflow-hidden transform transition-transform duration-200 ease-in-out hover:scale-90">
+                <img src="assets\css\images\DontBeAlarmed.gif" class="m-auto"></img>
+                <h3>Dont Be Alarmed</h3>
+                <p>
+                  An andriod alarm app that has a multitude of activities to play after the alarm goes off, ensuring you stay awake.
+                </p>
+            </div>
             </li>
           </ul>
         </section>
@@ -138,7 +206,6 @@
               <li>
                 <a href="assets\css\images\Franklin Dominguez resume.docx.pdf" download class="button primary"> Download Resume</a>
               </li>
-              <li><a href="more.html" class="button">Read more</a></li>
             </ul>
           </footer>
         </section>
