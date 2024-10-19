@@ -28,7 +28,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="navbar flex flex-row justify-around align-top border-2 w-10/12 mx-auto rounded-lg bg-black">
+    <div id="navbar" className="navbar flex flex-row justify-around align-top border-2 w-10/12 mx-auto rounded-lg bg-black">
       <button className="neon-button">About Me</button>
       <button className="neon-button">Projects</button>
       <button className="neon-button">Experience</button>
